@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/et_shopper_uid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/inputbackground"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="uid (&quot;user1&quot;)"
+        android:text="" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/et_shopper_pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/inputbackground"
+        android:gravity="center"
+        android:hint="pw (&quot;user1&quot;)"
+        android:text="" />
+
+    <Button
+        android:id="@+id/bt_shopper_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="#00000000"
+        
+        android:text="Login" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tv_loginas_retailer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"
+            android:layout_marginBottom="23dp"
+            android:text="Login as Retailer" android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tv_loginas_admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_loginas_retailer"
+            android:layout_alignLeft="@+id/tv_loginas_retailer"
+            android:layout_margin="15dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:text="Login as Administrator"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </RelativeLayout>
+
+</LinearLayout>

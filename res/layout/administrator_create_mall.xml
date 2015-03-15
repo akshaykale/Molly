@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/et_mall_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:background="@drawable/inputbackground"
+        android:gravity="center"
+        android:hint="mall_name" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/et_mall_disc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:background="@drawable/inputbackground"
+        android:gravity="center"
+        android:hint="Description" />
+
+    <EditText
+        android:id="@+id/et_mall_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:background="@drawable/inputbackground"
+        android:gravity="center"
+        android:hint="Location" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/et_mall_latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/inputbackground"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Latitude" />
+
+        <EditText
+            android:id="@+id/et_mall_longi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/inputbackground"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Longitude" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_mall_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:background="@drawable/inputbackground"
+        android:gravity="center"
+        android:hint="Contact No."
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/et_mall_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:background="@drawable/inputbackground"
+        android:gravity="center"
+        android:hint="email"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/bt_addmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="Add Mall" />
+
+</LinearLayout>
