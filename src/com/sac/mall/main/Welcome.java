@@ -5,6 +5,7 @@ import com.sac.mall.administrator.Administrator;
 import com.sac.mall.libraries.ParallaxViewPager;
 import com.sac.mall.shopper.MallList;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,7 +21,7 @@ import android.view.View;
 
 public class Welcome extends FragmentActivity{
 
-	@Override
+	@SuppressLint("NewApi") @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099cc")));
@@ -29,6 +30,7 @@ public class Welcome extends FragmentActivity{
 		SharedPreferences sp = getSharedPreferences("com.sac.file", MODE_PRIVATE);
 		if(sp.getInt("islogedin", 0)==1){
 			startActivity(new Intent(getApplicationContext(),MallList.class));
+			finish();
 		}
 		
 		FragmentManager fragmentManager = getSupportFragmentManager();

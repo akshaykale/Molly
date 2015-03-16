@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Molly</string>
+    <string name="app_name">EMall</string>
     <string name="action_settings">Settings</string>
     <string name="action_contacts">My Contacts</string>
     <string name="hello_world">Hello world!</string>
@@ -14,7 +14,7 @@
     <string name="hint_fname">first name</string>
     <string name="hint_last_name">last name</string>
     <string name="contacts">My Contacts</string>
-   
+    <string name="metaioSDKSignature">k678vXk0docdkZUQAldAWjcTL1AMSys+Q8aXmL4d+s0=</string>
     <string name="action_view_contacts">View Contacts</string>
     <string name="action_search">Search</string>
     <string name="action_update_contacts">Update Contacts</string> 

@@ -59,14 +59,14 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/administrator_viewretailers"
+            android:id="@+id/retailer_add_discount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="View Retailers" 
              android:layout_weight="1"/>
 
         <Button
-            android:id="@+id/administrator_addretailers"
+            android:id="@+id/retailer_view_discount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Retailer" 

@@ -8,8 +8,9 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text=""
         android:gravity="center"
+        android:textColor="#000000"
+        android:text="Search Mall around you in an Augmented View\n\nCategorised retailers\n\nView Discounts\n\n\n\n..."
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </LinearLayout>

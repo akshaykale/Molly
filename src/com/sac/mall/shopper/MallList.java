@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -24,6 +25,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -32,6 +34,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
+import com.raw.arview.ARView;
 import com.sac.mall.R;
 import com.sac.mall.location.GPSTracker;
 import com.sac.mall.main.MyMall;
@@ -46,9 +49,11 @@ GooglePlayServicesClient.OnConnectionFailedListener{
 	ListView lv_mallList;
 	ArrayList<MyMall> mallList = null;
 	
+	ImageButton floating;
+	
 	GPSTracker gps;
 	double geoLatitude, geoLongitude;
-	@Override
+	@SuppressLint("NewApi") @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099cc")));
@@ -56,12 +61,23 @@ GooglePlayServicesClient.OnConnectionFailedListener{
 		
 		lv_mallList = (ListView) findViewById(R.id.lv_mall_mallview);
 		
+		floating = (ImageButton) findViewById(R.id.floating);
+		
 		getLastLocation();
 		//get malls from server
 		if(isOnline())
 			getMallsList();
 		
 		MallListListener();
+		
+		floating.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(MallList.this,ARView.class);
+				i.putExtra("loc",  mallList );
+				startActivity(i);
+			}
+		});
 		
 	}
 	
@@ -234,6 +250,13 @@ GooglePlayServicesClient.OnConnectionFailedListener{
 			          startActivity(viewIntent);
 			return true;
 		}
+		/*if (id == R.id.action_arview) {
+			Intent i = new Intent(MallList.this,ARView.class);
+			i.putExtra("loc",  mallList );
+			startActivity(i);
+        	return true;
+			
+		}*/
 		return super.onOptionsItemSelected(item);
 	}
 

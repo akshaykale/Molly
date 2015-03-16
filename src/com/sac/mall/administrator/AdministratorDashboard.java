@@ -43,7 +43,7 @@ public class AdministratorDashboard extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.admistrator_dashboard_);
 
-		viewretailers = (Button) findViewById(R.id.administrator_viewretailers);
+		viewretailers = (Button) findViewById(R.id.retailer_add_discount);
 		viewmall = (Button) findViewById(R.id.administrator_viewmall);
 		viewevents = (Button) findViewById(R.id.administrator_viewevents);
 		
@@ -79,8 +79,8 @@ public class AdministratorDashboard extends Activity {
 		viewRetailersListener();
 		viewMallListener();
 
-		admindashboard_addretailer = (Button) findViewById(R.id.administrator_addretailers);
-		admin_viewretailer = (Button) findViewById(R.id.administrator_viewretailers);
+		admindashboard_addretailer = (Button) findViewById(R.id.retailer_view_discount);
+		admin_viewretailer = (Button) findViewById(R.id.retailer_add_discount);
 
 		admindashboard_addretailer
 				.setOnClickListener(new View.OnClickListener() {

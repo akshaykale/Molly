@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.sac.mall.R;
 import com.sac.mall.administrator.Administrator;
+import com.sac.mall.retailer.RetailerDashboard;
 import com.sac.mall.shopper.MallList;
 import com.sac.mall.shopper.ShopperDashboard;
 
@@ -70,25 +71,23 @@ public class FragmentC extends Fragment{
 	}
 
 	private void LoginAsRetailer() {
-		
-	}
-
-	private void LoginAsAdministrator() {
-		tv_admin.setOnClickListener(new OnClickListener() {
+		tv_retail.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Dialog d = new Dialog(getActivity());
 				d.setContentView(R.layout.dialog_loginas_admin);
+				d.setTitle("Retailer Login");
 				d.setCancelable(true);
 				final EditText et_uid = (EditText) d.findViewById(R.id.et_dialog_login_admin_uid);
 				EditText et_pw = (EditText) d.findViewById(R.id.et_dialog_login_admin_pw);
 				Button bt_log = (Button) d.findViewById(R.id.bt_dialog_login_admin_login);
 				Button bt_sign = (Button) d.findViewById(R.id.bt_dialog_login_admin_signup);
+				
 				bt_log.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
 						if(!et_uid.getText().toString().equals("")){
-						Intent i = new Intent(getActivity(),Administrator.class);
+						Intent i = new Intent(getActivity(),RetailerDashboard.class);
 						i.putExtra("mall_name", et_uid.getText().toString());
 						startActivity(i);
 						}else{
@@ -101,6 +100,43 @@ public class FragmentC extends Fragment{
 					@Override
 					public void onClick(View v) {
 						
+					}
+				});
+				d.show();
+			}
+		});
+	}
+
+	private void LoginAsAdministrator() {
+		tv_admin.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				final Dialog d = new Dialog(getActivity());
+				d.setContentView(R.layout.dialog_loginas_admin);
+				d.setCancelable(true);
+				d.setTitle("Administraton Login");
+				final EditText et_uid = (EditText) d.findViewById(R.id.et_dialog_login_admin_uid);
+				EditText et_pw = (EditText) d.findViewById(R.id.et_dialog_login_admin_pw);
+				Button bt_log = (Button) d.findViewById(R.id.bt_dialog_login_admin_login);
+				Button bt_sign = (Button) d.findViewById(R.id.bt_dialog_login_admin_signup);
+				bt_log.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						if(!et_uid.getText().toString().equals("")){
+						Intent i = new Intent(getActivity(),Administrator.class);
+						i.putExtra("mall_name", et_uid.getText().toString());
+						startActivity(i);
+						d.dismiss();
+						}else{
+							Toast.makeText(getActivity(), "Enter Mall Name", 1).show();
+						}
+					
+					}
+				});
+				bt_sign.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						Toast.makeText(getActivity(), "Contact us", 1).show();
 					}
 				});
 				d.show();
